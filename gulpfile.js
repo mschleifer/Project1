@@ -1,8 +1,10 @@
 var gulp = require('gulp');
 var panini = require('panini');
 
-gulp.task('panini', function () {
-    gulp.src('src/pages/**/*.html')
+gulp.task('panini', pages);
+
+function pages() {
+    return gulp.src('src/pages/**/*.html')
         .pipe(panini({
             root: 'src/pages/',
             layouts: 'src/layouts/',
@@ -11,4 +13,11 @@ gulp.task('panini', function () {
             data: 'src/data/'
         }))
         .pipe(gulp.dest('dist'));
-});
+}
+
+function resetPages(done) {
+    panini.refresh();
+    done();
+}
+
+gulp.watch('./src/{pages,layouts,partials,helpers,data}/**/*').on('all', gulp.series(resetPages, pages));

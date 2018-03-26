@@ -10,7 +10,7 @@
   "repository": "https://github.com/mschleifer/Project1.git",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "panini": "^1.6.2"
   },
   "dependencies": {
