@@ -7,9 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Matthew Schleifer",
+  "repository": "https://github.com/mschleifer/Project1.git",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1",
     "panini": "^1.6.2"
+  },
+  "dependencies": {
+    "material-components-web": "^0.33.0"
   }
 }

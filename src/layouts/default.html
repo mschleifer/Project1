@@ -1,10 +1,19 @@
 <html>
-  <head>
-    <title>Definitely a Website!</title>
-  </head>
-  <body>
-    <header class="header"><!-- ... --></header>
-    {{> body}}
-    <footer class="footer"><!-- ... --></footer>
-  </body>
+
+<head>
+  <title>Definitely a Website!</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="{{root}}../node_modules/material-components-web/dist/material-components-web.css">
+</head>
+
+<body class="mdc-typograhphy">
+  {{> header}} 
+  {{> body}} 
+  {{> footer}}
+
+  <script src="{{root}}../node_modules/material-components-web/dist/material-components-web.js"></script>
+  <script>mdc.autoInit()</script>
+</body>
+
 </html>
