@@ -1,11 +1,14 @@
 var gulp = require('gulp');
+var sass = require('gulp-sass');
 var panini = require('panini');
 var browser = require('browser-sync');
 
 gulp.task('build', gulp.parallel(
     pages,
     function () {
-        return gulp.src('node_modules/material-components-web/dist/material-components-web.css')
+        return gulp.src('node_modules/material-components-web/material-components-web.scss')
+            .pipe(sass({includePaths: './node_modules/'}))
+            .pipe(sass().on('error', sass.logError))
             .pipe(gulp.dest('dist/assets'));
     },
     function() {

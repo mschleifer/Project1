@@ -12,19 +12,34 @@
 </head>
 
 <body class="mdc-typography">
-  <header class="mdc-toolbar demo-toolbar">
+  <header class="mdc-toolbar  mdc-toolbar--fixed mdc-toolbar--waterfall" data-mdc-auto-init="MDCToolbar">
     <div class="mdc-toolbar__row">
         <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-            <a href="#" class="material-icons mdc-toolbar__menu-icon">menu</a>
+            <a class="material-icons mdc-toolbar__menu-icon mdc-ripple-surface" href="#" aria-label="Click to show the navigation menu"
+                aria-controls="nav-menu" data-mdc-auto-init="MDCRipple" data-mdc-ripple-is-unbounded>menu</a>
             <span class="mdc-toolbar__title">Updated</span>
         </section>
-        <!-- <section class="mdc-toolbar__section mdc-toolbar__section--align-end" role="toolbar">
+        <section class="mdc-toolbar__section mdc-toolbar__section--align-end" role="toolbar">
             <a href="#" class="material-icons mdc-toolbar__icon" aria-label="Download" alt="Download">file_download</a>
             <a href="#" class="material-icons mdc-toolbar__icon" aria-label="Print this page" alt="Print this page">print</a>
             <a href="#" class="material-icons mdc-toolbar__icon" aria-label="Bookmark this page" alt="Bookmark this page">bookmark</a>
-        </section> -->
+        </section>
     </div>
-</header> <main>
+</header>
+
+<!-- <header id="shrine-header"
+          class="mdc-toolbar mdc-toolbar--fixed mdc-theme--text-primary-on-background">
+    <div class="mdc-toolbar__row">
+      <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+        <a id="shrine-nav-icon" class="material-icons mdc-ripple-surface" href="#"
+           aria-label="Click to show the navigation menu"
+           aria-controls="shrine-nav-menu"
+           data-mdc-auto-init="MDCRipple"
+           data-mdc-ripple-is-unbounded>menu</a>
+        <h1 id="shrine-logo" class="mdc-toolbar__title"><span>Shrine</span></h1>
+      </section>
+    </div>
+  </header> --> <main class="mdc-toolbar-fixed-adjust">
     <p class="demo-paragraph">
         Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat
         vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae
@@ -157,8 +172,10 @@
 </footer>
 
 
-  <!-- <script src="assets/material-components-web.js"></script> -->
-  <!-- <script>mdc.autoInit()</script> -->
+  <script src="assets/material-components-web.js"></script> -->
+  <script>
+    mdc.autoInit()
+  </script>
 </body>
 
 </html>
