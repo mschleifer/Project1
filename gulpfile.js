@@ -3,8 +3,14 @@ var sass = require('gulp-sass');
 var panini = require('panini');
 var browser = require('browser-sync');
 
+gulp.task('styles', function() {
+    return gulp.src('src/styles/app.css')
+    .pipe(gulp.dest('dist/assets'));
+});
+
 gulp.task('build', gulp.parallel(
     pages,
+    'styles',
     function () {
         return gulp.src('node_modules/material-components-web/material-components-web.scss')
             .pipe(sass({includePaths: './node_modules/'}))
@@ -49,3 +55,4 @@ function server(done) {
 }
 
 gulp.watch('./src/{pages,layouts,partials,helpers,data}/**/*').on('all', gulp.series(resetPages, pages, reloadBrowser));
+gulp.watch('./src/styles').on('all', gulp.series('styles', reloadBrowser));
