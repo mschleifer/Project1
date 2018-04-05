@@ -54,5 +54,5 @@ html, body {
   #shrine-nav-icon:visited,
   #shrine-nav-icon:active,
   #shrine-nav-icon:focus {
-    color: var(--mdc-theme-text-secondary-on-background);
+    color: var(--mdc-theme-text-primary-on-background);
   }
