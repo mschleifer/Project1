@@ -16,10 +16,10 @@
 </head>
 
 <body class="mdc-typography">
-  <header id="shrine-header" class="mdc-top-app-bar mdc-theme--text-primary-on-background">
+  <header id="shrine-header" class="mdc-top-app-bar">
     <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-            <a id="shrine-nav-icon" href="#" class="material-icons mdc-ripple-surface mdc-top-app-bar__navigation-icon"
+            <a id="shrine-nav-icon" href="#" class="material-icons mdc-top-app-bar__navigation-icon mdc-ripple-surface"
                 aria-label="Click to show the navigation menu" aria-controls="shrine-nav-menu" data-mdc-auto-init="MDCRipple"
                 data-mdc-ripple-is-unbounded>menu</a>
             <span id="shrine-logo" class="mdc-top-app-bar__title">
@@ -27,7 +27,16 @@
             </span>
         </section>
     </div>
-</header> <main class="mdc-toolbar-fixed-adjust">
+</header> <aside id="shrine-nav-menu" class="mdc-drawer mdc-drawer--temporary" data-mdc-auto-init="MDCTemporaryDrawer">
+    <nav class="mdc-drawer__drawer">
+        <header class="mdc-drawer__header"></header>
+        <nav class="mdc-drawer__content mdc-list">
+            <a class="mdc-list-item" href="#">Home</a>
+            <a class="mdc-list-item" href="#">Clothing</a>
+            <a class="mdc-list-item" href="#">Popsicles</a>
+        </nav>
+    </nav>
+</aside> <main class="mdc-toolbar-fixed-adjust">
     <div class="mdc-card shrine-product-card mdc-ripple-surface" data-mdc-auto-init="MDCRipple" >
         <section class="mdc-card__primary">
             <span class="mdc-card__title shrine-product-card__price">$20</span>
@@ -72,7 +81,11 @@
 
   <script src="assets/material-components-web.js"></script>
   <script>
-    mdc.autoInit()
+    mdc.autoInit();
+    document.getElementById('shrine-nav-icon').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.getElementById('shrine-nav-menu').MDCTemporaryDrawer.open = true;
+    });
   </script>
 </body>
 

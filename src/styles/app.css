@@ -50,9 +50,41 @@ html, body {
   #shrine-nav-icon {
     margin-right: 28px;
   }
+  #shrine-nav-icon::before, #shrine-nav-icon::after {
+    background:black;
+  }
   
   #shrine-nav-icon:visited,
   #shrine-nav-icon:active,
   #shrine-nav-icon:focus {
     color: var(--mdc-theme-text-primary-on-background);
+  }
+
+  #shrine-nav-menu {
+    text-transform: uppercase;
+    padding-left: 16px;
+  }
+  
+  #shrine-nav-menu .mdc-drawer__drawer {
+    background-color: #fafafa;
+  }
+  
+  #shrine-nav-menu .mdc-drawer__header {
+    background: url(images/logo.png) 32px 32px no-repeat;
+    background-size: 30%;
+  }
+  
+  #shrine-nav-menu .mdc-drawer__header::before {
+    padding-top: 30%;
+  }
+  
+  #shrine-nav-menu .mdc-drawer__content {
+    background: url(images/diamond.svg) -32px bottom no-repeat;
+    background-size: 50%;
+  }
+  
+  #shrine-nav-menu .mdc-list-item {
+    height: 32px;
+    padding-left: 32px;
+    letter-spacing: .2em;
   }

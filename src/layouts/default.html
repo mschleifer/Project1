@@ -16,11 +16,15 @@
 </head>
 
 <body class="mdc-typography">
-  {{> header}} {{> body}} {{> footer}}
+  {{> header}} {{> drawer}} {{> body}} {{> footer}}
 
   <script src="{{root}}assets/material-components-web.js"></script>
   <script>
-    mdc.autoInit()
+    mdc.autoInit();
+    document.getElementById('shrine-nav-icon').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.getElementById('shrine-nav-menu').MDCTemporaryDrawer.open = true;
+    });
   </script>
 </body>
 
