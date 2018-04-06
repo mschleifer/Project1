@@ -3,24 +3,28 @@ var sass = require('gulp-sass');
 var panini = require('panini');
 var browser = require('browser-sync');
 
-gulp.task('styles', function() {
+gulp.task('styles', function () {
     return gulp.src('src/styles/app.css')
-    .pipe(gulp.dest('dist/assets'));
+        .pipe(gulp.dest('dist/assets'));
+});
+
+gulp.task('styles-vendor', function () {
+    return gulp.src('node_modules/material-components-web/material-components-web.scss')
+        .pipe(sass({ includePaths: './node_modules/' }))
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('dist/assets'));
+});
+
+gulp.task('scripts-vendor', function () {
+    return gulp.src('node_modules/material-components-web/dist/material-components-web.js')
+        .pipe(gulp.dest('dist/assets'));
 });
 
 gulp.task('build', gulp.parallel(
     pages,
     'styles',
-    function () {
-        return gulp.src('node_modules/material-components-web/material-components-web.scss')
-            .pipe(sass({includePaths: './node_modules/'}))
-            .pipe(sass().on('error', sass.logError))
-            .pipe(gulp.dest('dist/assets'));
-    },
-    function() {
-        return gulp.src('node_modules/material-components-web/dist/material-components-web.js')
-            .pipe(gulp.dest('dist/assets'));
-    }
+    'styles-vendor',
+    'scripts-vendor'
 ));
 
 gulp.task('default', gulp.series('build', server));
@@ -35,6 +39,7 @@ function pages() {
             data: 'src/data/'
         }))
         .pipe(gulp.dest('dist'));
+    done();
 }
 
 function resetPages(done) {
