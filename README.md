@@ -6,3 +6,5 @@ Re-implementation of the Material Components - Web tutorial project ("Shrine")(h
 *mdc-top-app-bar__nav-icon::before/after background-colors overwrite mdc-ripple-surface::before/after background color in current version; override this behavior
 *Replace mdc-toolbar and co. with mdc-top-app-bar and co.
 *Required restyling of logo image; using percents now but logos don't match at phone size (new logo shrinks)
+
+Unrelated, experimenting with Foundation Panini for limited static site generation.
