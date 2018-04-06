@@ -4,11 +4,29 @@ html, body {
   }
   
   .shrine-product-card {
-    margin: 0 auto;
     width: 320px;
     border-radius: 4px;
     margin-bottom: 8px;
     background-color: white;
+  }
+
+  /* Replaces old mdc-card__primary */
+  .shrine-product-card__primary {
+    padding: 16px;
+  }
+
+  /* Replaces old mdc-card__title */
+  .shrine-product-card__title {
+    font-family: Roboto,sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-size: .875rem;
+    font-weight: 500;
+    letter-spacing: .04em;
+    line-height: 1.5rem;
+    color: rgba(0,0,0,.87);
+    color: var(--mdc-theme-text-primary-on-background,rgba(0,0,0,.87));
+    margin: -.063rem 0;
   }
   
   .shrine-product-card__price {
@@ -87,4 +105,9 @@ html, body {
     height: 32px;
     padding-left: 32px;
     letter-spacing: .2em;
+  }
+  
+  #shrine-products .mdc-layout-grid__cell {
+    display: flex;
+    justify-content: center;
   }
